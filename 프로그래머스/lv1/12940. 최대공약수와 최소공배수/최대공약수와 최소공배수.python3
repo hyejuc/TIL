@@ -1,0 +1,12 @@
+def solution(n, m):
+    def gcd(n,m):
+        while m:
+            n,m=m,n%m
+        return n
+    g=gcd(n,m)
+    return [g,(n*m)/g]
+    '''
+    import math
+    g=math.gcd(n,m)
+    return [g,(n*m)/g]
+    '''
