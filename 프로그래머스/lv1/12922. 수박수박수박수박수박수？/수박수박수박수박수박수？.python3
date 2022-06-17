@@ -1,0 +1,4 @@
+def solution(n):
+    a='수박'
+    res=a*(int(n/2)+1)
+    return res[:n]
