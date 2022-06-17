@@ -1,0 +1,4 @@
+def solution(n):
+    arr=list(str(n))
+    arr2=map(int,arr)
+    return sum(arr2)
