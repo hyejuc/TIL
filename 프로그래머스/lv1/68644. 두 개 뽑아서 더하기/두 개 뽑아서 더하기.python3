@@ -1,0 +1,7 @@
+def solution(numbers):
+    answer = []
+    from itertools import combinations
+    c=list(combinations(numbers,2))
+    for i in range(len(c)):
+        answer.append(sum(c[i]))
+    return sorted(list(set(answer)))
