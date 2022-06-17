@@ -1,0 +1,13 @@
+def solution(lottos, win_nums):
+    answer = []
+    score=0
+    for i in lottos:
+        if i in win_nums:
+            score+=1
+    max_min=[score+lottos.count(0),score]
+    for i in max_min:
+        if i<2:
+            answer.append(6)
+        else:
+            answer.append(7-i)
+    return answer
