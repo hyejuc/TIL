@@ -1,0 +1,15 @@
+def solution(board, moves):
+    answer = 0
+    b=[]
+    for i in moves:
+        for j in range(len(board)):
+            if board[j][i-1] != 0:
+                if len(b)==0 or (len(b)!=0 and b[-1]!=board[j][i-1]):
+                    b.append(board[j][i-1])
+                    board[j][i-1]=0
+                elif len(b)!=0 and b[-1]==board[j][i-1]:
+                    b.pop()
+                    answer+=2
+                    board[j][i-1]=0
+                break
+    return answer
