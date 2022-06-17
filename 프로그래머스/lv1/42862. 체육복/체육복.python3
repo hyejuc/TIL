@@ -1,0 +1,40 @@
+def solution(n, lost, reserve):
+    Lost=set(lost)-set(reserve)
+    Reserve=set(reserve)-set(lost)
+    print(Lost)
+    print(Reserve)
+    for i in Reserve:
+        if i-1 in Lost:
+            Lost.remove(i-1)
+        elif i+1 in Lost:
+            Lost.remove(i+1)
+    return n-len(Lost)
+    '''num=[1]*n
+    for i in lost:
+        num[i-1]-=1
+    for i in reserve:
+        num[i-1]+=1
+    num1=list(num)
+    num2=list(num)
+    temp=[]
+    for i in range(1,n):
+        if num1[i]==0:
+            if num1[i-1] and num1[i-1]==2:
+                num1[i-1]-=1
+                num1[i]+=1
+    if num1[0]==0:
+        if num1[1]==2:
+            num1[1]-=1
+            num1[0]+=1
+    temp.append(n-num1.count(0))
+    for i in range(0,n-1):
+        if num2[i]==0:
+            if num2[i+1] and num2[i+1]==2:
+                num2[i+1]-=1
+                num2[i]+=1
+    if num2[-1]==0:
+        if num2[-2]==2:
+            num2[-2]-=1
+            num2[-1]+=1
+    temp.append(n-num2.count(0))
+    answer=max(temp)'''
