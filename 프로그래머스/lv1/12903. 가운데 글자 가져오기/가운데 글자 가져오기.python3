@@ -1,0 +1,7 @@
+def solution(s):
+    import math
+    a=int(len(s)/2)
+    if len(s)%2!=0:
+        return s[int(math.floor(a))]
+    else:
+        return s[a-1:a+1]
